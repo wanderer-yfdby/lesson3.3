@@ -8,7 +8,7 @@ pygame.init()
 # Параметры окна
 width = 800
 heigth =600
-height2 = 500
+height2 = 400
 screen = pygame.display.set_mode((width, heigth))
 
 pygame.display.set_caption("Игруля Тир")
@@ -26,12 +26,10 @@ fps = 60
 
 # Параметры целей
 target_img = pygame.image.load("img/target.png")
-
-target_size = 50
-target_speed = 5
+target = target_img
+target_size = 80
+target_speed = 10
 targets = []
-
-# Счет
 score = 0
 font = pygame.font.SysFont(None, 36)
 
@@ -43,7 +41,7 @@ def draw_text(text, font, color, surface, x, y):
 
 def create_target():
     x_pos = random.randint(0, width - target_size)
-    y_pos = random.randint(0, width - target_size)
+    y_pos = 0
     targets.append([x_pos, y_pos])
 
 
@@ -104,4 +102,3 @@ while running:
     clock.tick(fps)
 
 pygame.quit()
-sys.exit()
